@@ -1,0 +1,21 @@
+# Addresses that may appear verbatim in reports.
+#
+# Only public abuse/role mailboxes of organisations that are named in a case as
+# recipients, plus documentation examples. Reporter and victim addresses never
+# belong here — if one trips the checker, remove the address from the report.
+#
+# One entry per line, exact match.
+
+abuse@dynadot.com
+abuse@gmoregistry.com
+abuse@tencent.com
+qcloud_net_duty@tencent.com
+abuse@fedex.com
+reportphishing@apwg.org
+reportphishing@apple.com
+singcert@csa.gov.sg
+security@example.com
+
+# Delivered-URL userinfo, published verbatim as the attack string in a case.
+# It is not a mailbox; it is what the victim's link bar showed.
+fedex@qxvwnwx.shop

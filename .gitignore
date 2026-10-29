@@ -1,0 +1,14 @@
+# OS / editor noise
+.DS_Store
+Thumbs.db
+*.swp
+
+# Never published, even by accident
+*.pem
+*.key
+*.eml
+*.kdbx
+
+# Local working copies of evidence stay outside this repository
+raw/
+sent/

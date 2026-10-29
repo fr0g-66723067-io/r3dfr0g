@@ -1,0 +1,27 @@
+name: redaction check
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Redaction gate
+        run: bash scripts/check-redactions.sh
+      - name: Assert reports-only
+        run: |
+          if git ls-files | grep -qE '(^|/)go\.(mod|sum)$'; then
+            echo "::error::go module files present — this repository must not contain tool source"; exit 1
+          fi
+          if git ls-files | grep -qE '\.(go|c|h|rs|py)$'; then
+            echo "::error::source-code file present"; exit 1
+          fi
+          echo "reports-only check: OK"

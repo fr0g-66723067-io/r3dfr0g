@@ -1,0 +1,21 @@
+# License
+
+Copyright (c) 2026 the r3dfr0g reports authors.
+
+Report text and diagrams in this repository are licensed under the **Creative
+Commons Attribution 4.0 International License (CC BY 4.0)**.
+
+- Human-readable summary: https://creativecommons.org/licenses/by/4.0/
+- Full legal code: https://creativecommons.org/licenses/by/4.0/legalcode
+
+Attribution: link to the case page in this repository.
+
+Scope notes:
+
+- **Indicators** (domains, addresses, certificate details, hashes) are factual
+  observations about third-party infrastructure and are not claimed as
+  copyrightable subject matter.
+- **Screenshots of attacker-controlled pages** are reproduced as evidence, for
+  identification and blocking purposes.
+- Trademarks named in a report (courier and brand names) belong to their
+  owners. No affiliation or endorsement is implied.
