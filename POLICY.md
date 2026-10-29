@@ -56,6 +56,13 @@ Three layers, in order:
 
 A case is publishable only when all three pass and a human has read the diff.
 
+## Commit metadata
+
+Commit dates are normalised to UTC (`+0000`) so the author's local timezone is
+not published with every commit; `scripts/check-redactions.sh` fails on any
+non-UTC offset. The author identity is the project identity
+(`fr0g <fr0g@66723067.io>`), never a personal mailbox.
+
 ## Status claims
 
 "Filed" means a report was accepted by a desk. It does not mean the site is

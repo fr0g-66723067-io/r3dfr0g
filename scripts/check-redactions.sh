@@ -77,6 +77,17 @@ for f in "${FILES[@]}"; do
     | while read -r ln _; do report "$f" "$ln" "home path or SSH material reference"; done
 done
 
+# 6. Commit metadata: dates are normalized to UTC so the author's timezone is
+#    not published with every commit.
+if git rev-parse --git-dir >/dev/null 2>&1; then
+  while read -r line; do
+    case "$line" in
+      *+0000) ;;
+      *) report "commit-metadata" 0 "non-UTC commit date (timezone leak): $line" ;;
+    esac
+  done < <(git log --all --format='%ai')
+fi
+
 if [ "$fail" -eq 0 ]; then
   echo "redaction check: OK (${#FILES[@]} files)"
 else
