@@ -6,6 +6,9 @@
 #
 # One entry per line, exact match.
 
+# Project contact / commit identity — publishable by decision of the maintainer.
+fr0g@66723067.io
+
 abuse@dynadot.com
 abuse@gmoregistry.com
 abuse@tencent.com

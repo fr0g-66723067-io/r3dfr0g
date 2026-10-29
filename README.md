@@ -56,8 +56,8 @@ sites; do not interact with them.
 
 ## Corrections and re-use
 
-Open an issue for a correction or to tell us a case has been resolved — that is
-the only contact channel used here. Text is published under CC BY 4.0
+Open an issue for a correction or to tell us a case has been resolved, or mail
+`fr0g@66723067.io`. Text is published under CC BY 4.0
 ([`LICENSE`](LICENSE)); indicators are facts and are not copyrightable.
 
 ## Index

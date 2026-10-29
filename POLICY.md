@@ -9,8 +9,9 @@ that publishing helps the first two and gives the third nothing.
 | category | why | examples |
 |---|---|---|
 | **collection vantage** | identifies our collection point and lets an operator block or trace it | the cloud address, instance id, provider region, SSH key names |
-| **reporter identity** | personal and operational data; also the key to abuse-portal case lookups | names, mailboxes, phone numbers, account handles |
-| **abuse-case identifiers** | keyed to the reporter identity in most portals | registrar/registry/CERT ticket IDs |
+| **operational reporter mailbox** | the address used to file reports is the key to abuse-portal case lookups; publishing it would let anyone query our cases | the filing mailbox (kept out of every file, and in the local deny-list) |
+| **personal identity of contributors** | outside the project address, nobody's personal data belongs here | personal names, private mailboxes, phone numbers |
+| **abuse-case identifiers** | keyed to the filing mailbox in most portals | registrar/registry/CERT ticket IDs |
 | **credentials and secrets** | obviously | SMTP tokens, API keys, cookies belonging to us, private keys |
 | **victim data** | the victims are not the story and did not consent | phone numbers from the lure, entered form data, email headers with real addresses |
 | **raw kit artifacts** | publishing criminal code distributes it | the phishing bundle, its source maps, archives |
@@ -43,13 +44,15 @@ Three layers, in order:
    copied out of the private dossier — mechanical scrubbing cannot catch
    "the family member who received this".
 2. **`scripts/check-redactions.sh`** (runs in CI on every push): fails on
-   email addresses outside `redaction/allow.txt`, RFC1918/loopback addresses,
+   email addresses outside `redaction/allow.txt` (the project contact address
+   and public abuse desks are allow-listed; the filing mailbox is not),
+   RFC1918/loopback addresses,
    private-key blocks, token-shaped strings, absolute home paths, and any
    source-code file.
 3. **`scripts/check-local-secrets.sh`** (runs locally before a push): checks the
    tree against a deny-list that lives **outside** this repository
    (`~/.config/r3dfr0g-reports/deny.txt`), because the plaintext vantage address
-   and reporter address must never be committed here either.
+   and filing mailbox must never be committed here either.
 
 A case is publishable only when all three pass and a human has read the diff.
 
